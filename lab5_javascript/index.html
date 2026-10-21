@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praktikum 5 - JavaScript Dasar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">PEMROGRAMAN WEB • PERTEMUAN 6</p>
+      <h1>Praktikum 5: JavaScript Dasar</h1>
+      <p>Latihan variabel, output, function, percabangan, perulangan, DOM, form, validasi, dan kalkulator nilai.</p>
+      <div class="hero-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+    </div>
+  </header>
+
+  <main class="container page-grid">
+    <section class="panel span-2" id="latihan-output">
+      <div class="section-heading"><span class="number">01</span><div><h2>Menampilkan Output</h2><p>Contoh perubahan konten HTML dan pesan pada Console.</p></div></div>
+      <p id="pesan" class="message">Konten awal.</p>
+      <div class="button-row"><button id="btnHello" type="button">Tampilkan Hello World</button><button class="secondary" id="btnConsole" type="button">Tulis ke Console</button></div>
+      <p class="hint">Pesan Console dapat dilihat melalui Inspect / Periksa → Console.</p>
+    </section>
+
+    <section class="panel" id="latihan-dialog">
+      <div class="section-heading"><span class="number">02</span><div><h2>Alert dan Prompt</h2><p>Menerima nama pengguna dan memberi salam.</p></div></div>
+      <button id="btnPrompt" type="button">Masukkan Nama</button>
+      <p id="hasilPrompt" class="result" aria-live="polite">Belum ada nama yang dimasukkan.</p>
+    </section>
+
+    <section class="panel" id="latihan-aritmetika">
+      <div class="section-heading"><span class="number">03</span><div><h2>Function dan Aritmetika</h2><p>Penjumlahan, pengurangan, perkalian, pembagian, dan modulus.</p></div></div>
+      <div class="field-grid"><label>Bilangan A<input id="angkaA" type="number" value="9"></label><label>Bilangan B<input id="angkaB" type="number" value="4"></label></div>
+      <button id="btnOperasi" type="button">Hitung Operasi</button>
+      <div id="hasilOperasi" class="result" aria-live="polite">Hasil akan ditampilkan di sini.</div>
+    </section>
+
+    <section class="panel" id="latihan-if">
+      <div class="section-heading"><span class="number">04</span><div><h2>Percabangan if-else</h2><p>Nilai minimal 60 dinyatakan lulus.</p></div></div>
+      <label>Nilai mahasiswa (0-100)<input id="nilaiIf" type="number" min="0" max="100" placeholder="Contoh: 76"></label>
+      <button id="btnNilaiIf" type="button">Periksa Nilai</button>
+      <p id="hasilNilaiIf" class="result" aria-live="polite">Masukkan nilai untuk memulai.</p>
+    </section>
+
+    <section class="panel" id="latihan-switch">
+      <div class="section-heading"><span class="number">05</span><div><h2>Percabangan switch</h2><p>Pilih angka 1 sampai 5.</p></div></div>
+      <label>Pilihan angka<select id="pilihanSwitch"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="9">9 (contoh tidak tersedia)</option></select></label>
+      <button id="btnSwitch" type="button">Tampilkan Bilangan</button>
+      <p id="hasilSwitch" class="result" aria-live="polite">Hasil pilihan akan tampil di sini.</p>
+    </section>
+
+    <section class="panel" id="latihan-genap">
+      <div class="section-heading"><span class="number">06</span><div><h2>Form Genap atau Ganjil</h2><p>Memeriksa masukan bilangan bulat, termasuk angka negatif dan nol.</p></div></div>
+      <label>Bilangan bulat<input id="bilangan" type="number" step="1" placeholder="Contoh: 17"></label>
+      <button id="btnBilangan" type="button">Periksa Bilangan</button>
+      <p id="hasilBilangan" class="result" aria-live="polite">Belum diperiksa.</p>
+    </section>
+
+    <section class="panel" id="latihan-warna">
+      <div class="section-heading"><span class="number">07</span><div><h2>Mengubah Warna Halaman</h2><p>Satu function menerima parameter warna.</p></div></div>
+      <div class="button-row wrap"><button type="button" data-warna="lightgreen">Latar Hijau</button><button type="button" data-warna="white" class="secondary">Latar Putih</button><button type="button" data-warna="lightyellow" class="gold">Latar Kuning</button></div>
+      <p class="hint">Tekan salah satu tombol untuk mengubah warna latar.</p>
+    </section>
+
+    <section class="panel" id="latihan-menu">
+      <div class="section-heading"><span class="number">08</span><div><h2>DOM dan Checkbox Menu</h2><p>Total harga diperbarui saat menu dipilih.</p></div></div>
+      <div class="menu-list">
+        <label><input type="checkbox" class="menu" value="5000"> Ayam Goreng <span>Rp5.000</span></label>
+        <label><input type="checkbox" class="menu" value="500"> Tempe <span>Rp500</span></label>
+        <label><input type="checkbox" class="menu" value="2500"> Telur Dadar <span>Rp2.500</span></label>
+        <label><input type="checkbox" class="menu" value="1500"> Tahu <span>Rp1.500</span></label>
+        <label><input type="checkbox" class="menu" value="3000"> Es Teh <span>Rp3.000</span></label>
+      </div>
+      <div class="total-line">Total <strong>Rp<span id="total">0</span></strong></div>
+    </section>
+
+    <section class="panel span-2" id="mini-project">
+      <div class="section-heading"><span class="number">09</span><div><h2>Mini Project: Kalkulator Nilai Mahasiswa</h2><p>Nilai akhir = Tugas 30% + UTS 30% + UAS 40%.</p></div></div>
+      <form id="formNilai">
+        <div class="field-grid three"><label>Nilai Tugas<input id="tugas" type="number" value="85"></label><label>Nilai UTS<input id="uts" type="number" value="78"></label><label>Nilai UAS<input id="uas" type="number" value="88"></label></div>
+        <button type="submit">Hitung Nilai Akhir</button>
+      </form>
+      <div id="hasilAkhir" class="result result-large" aria-live="polite">Isi ketiga nilai, lalu tekan tombol hitung.</div>
+    </section>
+
+    <section class="panel" id="eksperimen">
+      <div class="section-heading"><span class="number">10</span><div><h2>Eksperimen Mandiri</h2><p>Perulangan, function cekGenap(), dan tampil/sembunyi.</p></div></div>
+      <button id="btnTabel" type="button">Tampilkan Tabel Perkalian 7</button>
+      <pre id="tabel7" class="code-output" hidden></pre>
+      <div class="button-row"><button id="btnCekGenap" type="button" class="secondary">Uji cekGenap(8)</button><button id="btnToggle" type="button" class="secondary">Sembunyikan/Tampilkan</button></div>
+      <p id="hasilCekGenap" class="result" aria-live="polite">Hasil cekGenap belum tersedia.</p>
+      <p id="teksToggle" class="toggle-box">Elemen ini dapat disembunyikan atau ditampilkan dengan tombol.</p>
+    </section>
+
+    <section class="panel" id="validasi">
+      <div class="section-heading"><span class="number">11</span><div><h2>Validasi Form</h2><p>Nama wajib diisi dan nilai harus 0-100.</p></div></div>
+      <form id="formValidasi">
+        <label>Nama mahasiswa<input id="namaValidasi" type="text" placeholder="Masukkan nama"></label>
+        <label>Nilai (0-100)<input id="nilaiValidasi" type="number" placeholder="Masukkan nilai"></label>
+        <button type="submit">Validasi Data</button>
+      </form>
+      <p id="hasilValidasi" class="result" aria-live="polite">Data belum divalidasi.</p>
+    </section>
+  </main>
+
+  <footer><div class="container"><p>Praktikum 5 - JavaScript Dasar dan Manipulasi HTML</p><p class="hint">Contoh untuk pembelajaran. Buka Console browser untuk melihat output latihan.</p></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
