@@ -157,16 +157,3 @@ if (nama === "") {
 ## Kesimpulan
 
 Praktikum ini menerapkan dasar JavaScript, function, operasi aritmetika, percabangan, DOM, event listener, perulangan, manipulasi gaya, perhitungan nilai, dan validasi form. Seluruh contoh dapat diuji secara lokal melalui browser.
-
-## Pengumpulan ke GitHub
-
-```bash
-git init
-git add .
-git commit -m "Praktikum 5 JavaScript Dasar"
-git branch -M main
-git remote add origin https://github.com/USERNAME/Lab5Web.git
-git push -u origin main
-```
-
-Ganti `USERNAME` dengan nama akun GitHub dan buat repository bernama `Lab5Web` terlebih dahulu.
